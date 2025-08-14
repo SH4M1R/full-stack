@@ -3,22 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tienda</title>
+    <title>Catálogo de Tienda</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
-            padding: 20px;
             background-color: #f4f4f4;
         }
-        h1 {
-            text-align: center;
+        header {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 1.5em;
+        }
+        .acciones {
+            display: flex;
+            gap: 10px;
+        }
+        .acciones input[type="text"] {
+            padding: 5px;
+            border-radius: 4px;
+            border: none;
+        }
+        .acciones button {
+            padding: 6px 12px;
+            border: none;
+            border-radius: 4px;
+            background: orange;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .acciones button:hover {
+            background: darkorange;
         }
         .catalogo {
             display: flex;
             justify-content: center;
             gap: 20px;
             flex-wrap: wrap;
+            padding: 20px;
         }
         .producto {
             background: white;
@@ -41,8 +71,15 @@
     </style>
 </head>
 <body>
-    <h1>Catálogo</h1>
-    <h2>Laptos para programar y jugar al maincra</h2>
+
+    <header>
+        <h1>LAPTOPS GAMER</h1>
+        <div class="acciones">
+            <input type="text" placeholder="Buscar producto...">
+            <button>🛒 Ver Carrito</button>
+        </div>
+    </header>
+
     <div class="catalogo">
         <div class="producto">
             <img src="https://rymportatiles.com.pe/cdn/shop/files/15-FA1163DX.png?v=1723056663" alt="Zapatillas Urbanas">
