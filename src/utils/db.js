@@ -1,13 +1,17 @@
-PORT=3306
-DB_HOST=localhost
-DB_USER=root
-DB_PASS=
-DB_NAME=test
-JWT_SECRET=LLAVE_SUPER_SECRETA
-JWT_EXPIRES=15
+import mysql from "mysql2/promise";
+import dotenv from "dotenv";
 
-APP_NAME=MiTienda
-SMTP_HOST=localhost
-SMTP_PORT=1025
-SMTP_USER=root
-SMTP_PASS=1234
+dotenv.config();
+
+const pool = mysql.createPool({
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASS || "",
+  database: process.env.DB_NAME,
+  port: process.env.PORT || 3306,
+  waitForConnections: true,
+  connectionLimit: 10,
+  queueLimit: 0
+});
+
+export default pool;
